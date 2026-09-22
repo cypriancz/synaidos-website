@@ -384,7 +384,8 @@
 
     .card h3,
     .timeline-step h3,
-    .contact-card h3 {
+    .contact-card h3,
+    .field-panel h3 {
       margin: 0 0 0.8rem;
       font-family: "Space Grotesk", sans-serif;
       font-size: 1.25rem;
@@ -490,13 +491,196 @@
       padding-top: 1.3rem;
     }
 
+    .lede-muted {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .inline-link {
+      color: var(--accent);
+      border-bottom: 1px solid rgba(131, 243, 200, 0.35);
+    }
+
+    .inline-link:hover,
+    .inline-link:focus-visible {
+      color: var(--text);
+      border-bottom-color: var(--text);
+    }
+
+    .field-head {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.4rem;
+    }
+
+    .chip-quiet {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(167, 191, 225, 0.2);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .chip-quiet::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent-3);
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .field-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.75rem;
+    }
+
+    .field-points {
+      list-style: none;
+      margin: 1.6rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 1.15rem;
+    }
+
+    .field-points li {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .field-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
+
+    .field-points strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.3rem;
+    }
+
+    .field-points p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .media-frame {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      border-radius: 20px;
+      border: 1px dashed rgba(167, 191, 225, 0.26);
+      background:
+        radial-gradient(circle at 28% 22%, rgba(104, 183, 255, 0.14), transparent 62%),
+        rgba(255, 255, 255, 0.02);
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      gap: 0.45rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .media-frame span {
+      font-family: "Space Grotesk", sans-serif;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+
+    .media-frame small,
+    .artifact-row small {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .media-frame video,
+    .media-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .artifact-list {
+      list-style: none;
+      margin: 1.25rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .artifact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 16px;
+      border: 1px solid rgba(167, 191, 225, 0.12);
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .artifact-row b {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .tag-soon {
+      flex: 0 0 auto;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 211, 111, 0.28);
+      background: rgba(255, 211, 111, 0.08);
+      color: var(--accent-3);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .field-note {
+      margin: 1.5rem 0 0;
+      padding-top: 1.3rem;
+      border-top: 1px solid rgba(167, 191, 225, 0.1);
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
     @media (max-width: 1080px) {
       .hero-grid,
       .section-title,
       .contact-grid,
       .services-grid,
       .proof-grid,
-      .process-grid {
+      .process-grid,
+      .field-grid {
         grid-template-columns: 1fr;
       }
 
@@ -531,6 +715,16 @@
         grid-template-columns: 1fr;
       }
 
+      .field-panel {
+        padding: 1.35rem;
+      }
+
+      .artifact-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
       .shell {
         width: min(calc(100% - 1.25rem), var(--content));
       }
@@ -555,6 +749,7 @@
       <nav class="desktop-nav" aria-label="Primary">
         <a href="#capabilities">Capabilities</a>
         <a href="#use-cases">Use Cases</a>
+        <a href="#field-work">Field Work</a>
         <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -568,6 +763,7 @@
         <nav aria-label="Mobile">
           <a href="#capabilities">Capabilities</a>
           <a href="#use-cases">Use Cases</a>
+          <a href="#field-work">Field Work</a>
           <a href="#process">Process</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -705,6 +901,83 @@
             <strong>Smaller backlogs</strong>
             <p>Summarize cases, search internal documentation, and automate repetitive internal tasks across service, finance, and operations.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="field-work">
+      <div class="shell">
+        <div class="section-title">
+          <div>
+            <div class="field-head">
+              <span class="eyebrow">Field Work</span>
+              <span class="chip-quiet">In validation</span>
+            </div>
+            <h2>ShelfSense: shelf intelligence from a walk down the aisle.</h2>
+          </div>
+          <p>
+            An in-house build, currently being tested against real retail bays. One pass with a handheld phone and the bay reports itself &mdash; which lanes are stocked, which are empty, and which the scan could not read.
+          </p>
+        </div>
+
+        <div class="field-grid">
+          <article class="field-panel">
+            <h3>Built for shelves nobody has instrumented.</h3>
+            <p class="lede-muted">
+              Out-of-stocks are found today by someone walking the aisle with a clipboard, or not found at all. ShelfSense keeps the walk and removes the clipboard.
+            </p>
+            <ul class="field-points">
+              <li>
+                <strong>No hardware in the store</strong>
+                <p>Nothing mounted to the fixture, nothing wired into store systems, no shelf sensors to maintain. The capture device is a phone that staff already carry.</p>
+              </li>
+              <li>
+                <strong>No setup per bay</strong>
+                <p>No planogram upload and no per-store configuration. A bay the system has never seen still produces a structured report.</p>
+              </li>
+              <li>
+                <strong>It says when it cannot tell</strong>
+                <p>Lanes the pass did not cover well enough are returned as unreadable rather than quietly guessed. An honest gap in the report is worth more than a confident wrong answer.</p>
+              </li>
+              <li>
+                <strong>A deliverable, not a dashboard</strong>
+                <p>Each scan produces a per-lane report and a one-page summary an area manager can act on without logging into anything.</p>
+              </li>
+            </ul>
+
+            <p class="field-note">
+              ShelfSense is being measured against hand counts taken at the shelf. We will publish accuracy figures here once they are numbers we would stand behind in front of a client &mdash; not before.
+            </p>
+          </article>
+
+          <aside class="field-panel">
+            <!-- Drop the walkthrough in here when it is cut:
+                 <div class="media-frame"><video src="assets/video/shelfsense-walk.mp4"
+                      poster="assets/images/shelfsense-poster.jpg" controls playsinline muted></video></div> -->
+            <div class="media-frame">
+              <span>Aisle walkthrough</span>
+              <small>Capture-to-report footage, publishing soon.</small>
+            </div>
+
+            <ul class="artifact-list">
+              <li class="artifact-row">
+                <b>Sample bay report</b>
+                <span class="tag-soon">Soon</span>
+              </li>
+              <li class="artifact-row">
+                <b>Field validation summary</b>
+                <span class="tag-soon">Soon</span>
+              </li>
+              <li class="artifact-row">
+                <b>Pilot brief for retail operators</b>
+                <span class="tag-soon">Soon</span>
+              </li>
+            </ul>
+
+            <p class="field-note">
+              Running a store estate and want early access? <a class="inline-link" href="mailto:hello@synaidos.com?subject=ShelfSense%20Early%20Access">Ask about the pilot.</a>
+            </p>
+          </aside>
         </div>
       </div>
     </section>
